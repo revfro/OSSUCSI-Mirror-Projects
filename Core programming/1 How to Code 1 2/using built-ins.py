@@ -7,4 +7,5 @@ class Image:
 		self.colour = c
 		self.outline= d
 		
-
+# Image -> Boolean
+# Produce true if image is wide/tall/square
