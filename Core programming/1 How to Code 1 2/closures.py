@@ -21,6 +21,8 @@ I4 = Image(90,90,"solid","orange")
 
 N1 = [1,4,6,9,13,15,19]
 
+S1 = ["stor","sak","grat"]
+
 # wideonly: List -> List
 # filter a list for images where width >= height
 
@@ -71,7 +73,7 @@ class FnTest(unittest.TestCase):
 		
 	#prefixAll
 	def testPrefixAll123(self):
-		self.assertEqual(pre)
+		self.assertEqual(prefixAll(I))
 
 if __name__ == '__main__':
 	unittest.main()
