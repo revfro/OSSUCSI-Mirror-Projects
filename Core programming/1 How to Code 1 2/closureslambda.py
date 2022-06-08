@@ -1,5 +1,5 @@
 import unittest
-# builtins will be used with locally defined functions 
+# builtins will be used with lambda functions in place of locally defined functions
 
 
 # Data definition
@@ -29,36 +29,28 @@ S1 = ["stor","sak","grat"]
 # filter a list for images where width >= height
 
 def wideOnly(loi):
-	def wideBool(i):
-		return i.width > i.height
-	return list(filter(wideBool,loi))
+	return list(filter(lambda i: i.width > i.height,loi))
 
 # widerThanOnly
 # Number,List -> List
 # Return list of elements wider than number
 
 def widerThanOnly(w,loi):
-	def widerThanBool(i):
-		return i.width > w
-	return list(filter(widerThanBool,loi))
+	return list(filter(lambda i: i.width > w,loi))
 
 # cubeAll
 # list -> list
 # return a list with each element cubed
 
 def cubeAll(lon):
-	def cube(n):
-		return n*n*n
-	return list(map(cube,lon))
+	return list(map(lambda n: n*n*n,lon))
 	
 # prefixAll
 # String,list -> list
 # produce list los with all elements prefixed by a string
 
 def prefixAll(p,los):
-	def prefix(s):
-		return p+s
-	return list(map(prefix,los))
+	return list(map(lambda s: p+s,los))
 
 # Testing
 class FnTest(unittest.TestCase):
