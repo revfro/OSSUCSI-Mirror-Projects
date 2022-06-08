@@ -54,7 +54,7 @@ def cubeAll(lon):
 # produce list los with all elements prefixed by a string
 
 def prefixAll(s,los):
-	return[]
+	return []
 
 # Testing
 class FnTest(unittest.TestCase):
@@ -73,7 +73,7 @@ class FnTest(unittest.TestCase):
 		
 	#prefixAll
 	def testPrefixAll123(self):
-		self.assertEqual(prefixAll(I))
+		self.assertEqual(prefixAll("a",I1),["astor","asak","agrat"])
 
 if __name__ == '__main__':
 	unittest.main()
