@@ -59,16 +59,14 @@ D6 = Element("D6",0,[D4,D5])
 #rest = loe[1:]
 def sumData(e, total = 0):
   
-                def sumDataLOE(loe, total):
-                        while ( loe ):
-                                first, *loe = loe 
-                                total = sumData(first, total)
-                        return total
-                        
-                if e.data:
-                        return e.data + total
-                else:
-                        return sumDataLOE(e.subs, total)        
+        if e.data:
+                return e.data + total
+        else:
+                loe = e.subs
+                while ( loe ):
+                        first, *loe = loe 
+                        total = sumData(first, total)
+                return total
 
 #Testing
 
