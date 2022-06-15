@@ -60,11 +60,10 @@ D6 = Element("D6",0,[D4,D5])
 def sumData(e, total = 0):
   
                 def sumDataLOE(loe, total):
-                        if not loe:
-                                return total
-                        else:
-                                first, *rest = loe 
-                                return sumDataLOE(rest, sumData(first, total))
+                        while ( loe ):
+                                first, *loe = loe 
+                                total = sumData(first, total)
+                        return total
                         
                 if e.data:
                         return e.data + total
