@@ -50,21 +50,26 @@ D6 = Element("D6",0,[D4,D5])
 # def sumDataElement(e):			# stub
 # 	return 0
 
-def sumData(e):
-	def sumDataElement(e):
-		return (sumDataLoe(e.subs) if e.data == 0 else
-				e.data
-				)
-		
-	def sumDataLoe(loe):
-		if loe == []:
-			return 0
-		else:
-			return (
-			sumDataElement(loe[0])
-			+ sumDataLoe(loe[1:]))
-			
-	return sumDataElement(e)
+
+#by passing the total we can create a function with "tail recursion"
+#the "comma on the left" is called "unpacking"
+#the * puts the remainer in a list
+#the result is that:
+#first = loe[0]
+#rest = loe[1:]
+def sumData(e, total = 0):
+  
+                def sumDataLOE(loe, total):
+                        if not loe:
+                                return total
+                        else:
+                                first, *rest = loe 
+                                return sumDataLOE(rest, sumData(first, total))
+                        
+                if e.data:
+                        return e.data + total
+                else:
+                        return sumDataLOE(e.subs, total)        
 
 #Testing
 
